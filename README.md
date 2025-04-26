@@ -119,8 +119,6 @@ Once you push your changes to the `project` branch, GitHub Actions will automati
 
 ---
 
-
-This version explicitly calls out **CI (Continuous Integration)** and **CD (Continuous Delivery)** in the GitHub Actions pipeline context. Let me know if there’s anything else you’d like to adjust!
 ## 🎥 Video Walkthrough
 👉 [Video link](https://drive.google.com/file/d/1veK8mLx2Qqqb4E328lnvLuNVM8HlaCyK/view?usp=sharing) 
 
