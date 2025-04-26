@@ -67,23 +67,41 @@ This project demonstrates how to deploy the **Medusa** open-source headless comm
 
 
 ---
-
 ## 📑 Setup and Installation
 
-### Step 1: Clone the Repository  
+### Step 1: Set Up GitHub Secrets  
+In your GitHub repository (`Settings > Secrets and variables > Actions`), add the following secrets:
+- **DOCKERHUB_USERNAME** → Your Docker Hub username
+- **DOCKERHUB_TOKEN** → Your Docker Hub access token
+
+These are used by the GitHub Actions workflow for pushing images
+
+---
+
+### Step 2: Install Terraform  
+Install Terraform from the [official website](https://www.terraform.io/downloads.html) if it is not already installed.
+
+---
+
+### Step 3: Install AWS CLI  
+Install the AWS Command Line Interface (CLI) from the [official AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
+
+---
+
+### Step 4: Configure AWS CLI  
+Set up your AWS credentials locally by running:
+```bash
+aws configure
+```
+Enter your AWS Access Key, Secret Access Key, region, and output format.
+
+---
+
+### Step 5: Clone the Repository  
 Clone the repository to your local machine:
 ```bash
 git clone https://github.com/amie2001/docker-medusa-/tree/project
 cd docker-medusa-
-```
-
-### Step 2: Install Terraform  
-Ensure **Terraform** is installed on your local machine. If not, you can install it from the [official website](https://www.terraform.io/downloads.html).
-
-### Step 3: Configure AWS Credentials  
-Set up your AWS credentials using the AWS CLI:
-```bash
-aws configure
 ```
 
 ### Step 4: Apply Terraform Configuration  
@@ -93,14 +111,7 @@ terraform init
 terraform apply
 ```
 
-### Step 5: Build and Push Docker Image to Docker Hub  
-Use the following commands to build and push the Docker image to Docker Hub:
-```bash
-docker build -t pavi2244/medusa-project .
-docker push pavi2244/medusa-project:latest
-```
-
-### Step 6: Set Up GitHub Actions Pipeline  
+### Step 5: Set Up GitHub Actions Pipeline  
 Once you push your changes to the `project` branch, GitHub Actions will automatically:
 - Build the Docker image.
 - Push the image to Docker Hub.
