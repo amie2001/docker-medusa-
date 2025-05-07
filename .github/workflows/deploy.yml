@@ -3,7 +3,7 @@ name: Deploy Medusa Backend to Docker Hub
 on:
   push:
     branches:
-      - project
+      - ci/cd-project1
 
 jobs:
   build-and-push:
